@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Your Limits | Constraint-Driven Innovation Course</title>
+    <meta name="description" content="What if your biggest limitations were your greatest competitive advantages? Learn the systematic methodology for turning constraints into frameworks.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --steel-blue: #4A6FA5;
+            --steel-blue-dark: #3D5C8A;
+            --copper: #B7704F;
+            --copper-dark: #9A5D42;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --text-dark: #2d2d2d;
+            --text-medium: #5a5a5a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--steel-blue) 0%, var(--steel-blue-dark) 100%);
+            color: var(--white);
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+
+        .hero-eyebrow {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 32px;
+        }
+
+        .hero-hook {
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--copper);
+            color: var(--white);
+            padding: 18px 48px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--copper);
+        }
+
+        .btn-primary:hover {
+            background: var(--copper-dark);
+            border-color: var(--copper-dark);
+            transform: translateY(-2px);
+        }
+
+        .problem {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--copper);
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--steel-blue);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .problem-card {
+            padding: 32px;
+            background: var(--light-gray);
+            border-radius: 12px;
+            border-left: 4px solid var(--steel-blue);
+        }
+
+        .problem-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--steel-blue);
+            margin-bottom: 12px;
+        }
+
+        .problem-card p {
+            color: var(--text-medium);
+        }
+
+        .shift {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .shift-content {
+            max-width: 800px;
+        }
+
+        .shift-list {
+            list-style: none;
+            margin-top: 32px;
+        }
+
+        .shift-list li {
+            padding: 20px 0;
+            padding-left: 48px;
+            position: relative;
+            border-bottom: 1px solid rgba(74, 111, 165, 0.2);
+        }
+
+        .shift-list li:last-child {
+            border-bottom: none;
+        }
+
+        .shift-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--copper);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .shift-list strong {
+            color: var(--steel-blue);
+        }
+
+        .modules {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .module-card {
+            padding: 32px;
+            background: var(--white);
+            border: 2px solid var(--steel-blue);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .module-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(74, 111, 165, 0.15);
+        }
+
+        .module-number {
+            display: inline-block;
+            background: var(--steel-blue);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .module-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--steel-blue);
+            margin-bottom: 12px;
+        }
+
+        .module-card p {
+            color: var(--text-medium);
+            font-size: 16px;
+        }
+
+        .proof {
+            padding: 80px 0;
+            background: var(--steel-blue);
+            color: var(--white);
+        }
+
+        .proof h2 {
+            color: var(--white);
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .proof-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 32px;
+            border-radius: 12px;
+            border-left: 4px solid var(--copper);
+        }
+
+        .proof-card .constraint {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--copper);
+            margin-bottom: 8px;
+        }
+
+        .proof-card .result {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .proof-card p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+
+        .about {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .about-content {
+            max-width: 800px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--steel-blue);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-medium);
+            margin-top: 8px;
+        }
+
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--steel-blue-dark) 0%, var(--steel-blue) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn-primary {
+            background: var(--copper);
+            border-color: var(--copper);
+        }
+
+        .cta .btn-primary:hover {
+            background: var(--copper-dark);
+            border-color: var(--copper-dark);
+        }
+
+        .cta-note {
+            margin-top: 24px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        footer {
+            padding: 48px 0;
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--copper);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0 80px;
+            }
+            .problem, .shift, .modules, .proof, .about {
+                padding: 60px 0;
+            }
+            .cta {
+                padding: 80px 0;
+            }
+            .about-stats {
+                gap: 32px;
+            }
+            .btn-primary {
+                padding: 16px 36px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <p class="hero-eyebrow">A RageDesigner Course</p>
+            <h1>Love Your Limits</h1>
+            <p class="hero-subtitle">The Constraint-Driven Innovation Course</p>
+            <p class="hero-hook">What if your biggest limitations were your greatest competitive advantages?</p>
+            <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
+        </div>
+    </section>
+
+    <section class="problem">
+        <div class="container">
+            <p class="section-label">The Problem</p>
+            <h2>Everyone Fights Their Constraints</h2>
+            <p>Traditional thinking says more resources equal more success. So we spend our energy fighting limitations instead of working with them.</p>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Never Enough Resources</h3>
+                    <p>Time, money, people, tools. There's always something missing that seems to stand between you and success.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Obstacles Everywhere</h3>
+                    <p>Every project has limitations. And every limitation feels like something to overcome, work around, or apologize for.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Exhausting Battles</h3>
+                    <p>Fighting constraints drains energy that could go toward actual progress. The battle itself becomes the bottleneck.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="shift">
+        <div class="container">
+            <div class="shift-content">
+                <p class="section-label">The Shift</p>
+                <h2>What If Constraints Are the Point?</h2>
+                <p>The best solutions don't come from removing limitations. They come from working WITH them. Constraints reveal what's actually essential. They force clarity. They generate systems.</p>
+                <ul class="shift-list">
+                    <li><strong>Constraints are framework generators.</strong> Every limitation asks a question worth answering systematically.</li>
+                    <li><strong>Limitations reveal what's essential.</strong> When you can't do everything, you discover what actually matters.</li>
+                    <li><strong>Problems become systems.</strong> The recurring challenges you can't solve become the methodologies you build.</li>
+                    <li><strong>Working with limits beats fighting them.</strong> Energy flows toward building instead of battling.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="modules">
+        <div class="container">
+            <p class="section-label">The Course</p>
+            <h2>Four Modules to Transform Your Constraints</h2>
+            <p>Self-paced video modules with practical frameworks you can apply immediately.</p>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <span class="module-number">1</span>
+                    <h3>Constraints Are Framework Generators</h3>
+                    <p>The mindset shift that changes everything. Learn to see limitations as opportunities for systematic thinking.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-number">2</span>
+                    <h3>The Constraint Analysis Method</h3>
+                    <p>A systematic process for evaluating any limitation. Identify which constraints to embrace and which to work around.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-number">3</span>
+                    <h3>From Problem to Framework</h3>
+                    <p>The transformation methodology. Turn recurring challenges into reusable systems that compound over time.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-number">4</span>
+                    <h3>Implementation and Evolution</h3>
+                    <p>Making it stick. Build the habits and practices that turn constraint-driven thinking into your default operating system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="proof">
+        <div class="container">
+            <p class="section-label" style="color: var(--copper);">Real Results</p>
+            <h2>Constraints That Became Advantages</h2>
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <p class="constraint">8,000 Pixel Limit</p>
+                    <p class="result">13 pages built in 3 hours</p>
+                    <p>A design constraint forced systematic component thinking. Result: faster deployment than unlimited canvas would have allowed.</p>
+                </div>
+                <div class="proof-card">
+                    <p class="constraint">Token Window Limits</p>
+                    <p class="result">Documentation system created</p>
+                    <p>AI context limitations drove creation of a strategic intelligence preservation system. The constraint became the foundation.</p>
+                </div>
+                <div class="proof-card">
+                    <p class="constraint">API Restrictions</p>
+                    <p class="result">Entire operating methodology</p>
+                    <p>What looked like a limitation became the architecture for an AI collaboration system now used across multiple organizations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <p class="section-label">Your Guide</p>
+                <h2>25 Years of Turning Constraints Into Systems</h2>
+                <p>Mike Gingerich has spent a quarter century working across industries, building frameworks out of the limitations everyone else complained about. From design constraints to budget limitations to technology restrictions, every boundary became an opportunity for systematic thinking.</p>
+                <p style="margin-top: 16px;">This course distills that experience into a methodology anyone can apply. Not theory. Real patterns from real constraints that produced real results.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <p class="stat-number">25+</p>
+                        <p class="stat-label">Years Experience</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-number">200+</p>
+                        <p class="stat-label">Frameworks Created</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-number">50+</p>
+                        <p class="stat-label">Industries Validated</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="waitlist">
+        <div class="container">
+            <h2>Ready to Love Your Limits?</h2>
+            <p class="cta-subtitle">Join the waitlist for early access and launch pricing. Course launching soon.</p>
+            <a href="https://app.ragedesigner.com/waitlist-love-your-limits" class="btn-primary">Join the Waitlist</a>
+            <p class="cta-note">Full course: $297 at launch. Waitlist members get first access.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Part of the <a href="https://ragedesigner.com">RageDesigner</a> ecosystem</p>
+            <p style="margin-top: 8px;">© 2026 RageDesigner. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
