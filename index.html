@@ -248,6 +248,12 @@
 
         .proof h2 { color: var(--white); }
 
+        .proof .section-label {
+            color: var(--white);
+            opacity: 0.85;
+            font-size: 14px;
+        }
+
         .proof-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -263,18 +269,20 @@
         }
 
         .proof-card .constraint {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
-            color: var(--copper);
+            color: var(--white);
+            opacity: 0.85;
             margin-bottom: 8px;
         }
 
         .proof-card .result {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 10px;
+            color: var(--white);
         }
 
         .proof-card p {
@@ -461,7 +469,7 @@
 
     <section class="proof">
         <div class="container">
-            <p class="section-label" style="color: var(--copper);">Real Results</p>
+            <p class="section-label">Real Results</p>
             <h2>Constraints That Became Advantages</h2>
             <div class="proof-grid">
                 <div class="proof-card">
